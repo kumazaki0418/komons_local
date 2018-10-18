@@ -489,9 +489,6 @@
 			.img_wrap {
 				position: relative;
 				transition: opacity 1s;
-				&::after{
-
-				}
 				&:hover{
 					opacity: 0.8;
 				}
