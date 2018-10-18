@@ -4417,39 +4417,23 @@ body.loaded #loading {
     #concept .concept_index ul {
       position: relative;
       overflow: hidden;
-      margin-top: -5px; }
-      #concept .concept_index ul::before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        border-left: 1px solid #E0E0E0;
-        height: 160px;
-        width: 0;
-        z-index: 10;
-        top: 10px;
-        left: 1px; }
+      margin-top: -5px;
+      padding: 30px; }
       #concept .concept_index ul li {
         position: relative;
         height: 24px;
         line-height: 24px;
-        margin: 10px 0; }
+        padding: 10px 0;
+        border-left: 1px solid #aaa; }
         #concept .concept_index ul li a {
           font-size: 14px;
-          color: #222222;
+          color: #00381f;
           display: block;
           padding-left: 25px; }
-        #concept .concept_index ul li.current::after {
-          content: ' ';
-          display: block;
-          position: absolute;
-          border-left: 1px solid #222;
-          height: 24px;
-          width: 0;
-          z-index: 20;
-          top: 0;
-          left: 1px; }
-        #concept .concept_index ul li.current a {
-          color: #888; }
+        #concept .concept_index ul li.current {
+          border-left: 1px solid #00381f; }
+          #concept .concept_index ul li.current a {
+            color: #aaa; }
   #concept .concept_content {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -4508,77 +4492,186 @@ body.loaded #loading {
         #concept .concept_content .concept_section_part .concept_img p {
           font-size: 12px;
           margin-top: 5px; }
-  #concept .concept_index_btn, #concept .concept_index_sp {
+  #concept .concept_index_btn,
+  #concept .concept_index_sp {
     display: none; }
+    #concept .concept_index_btn:focus,
+    #concept .concept_index_sp:focus {
+      outline: none; }
   #concept .concept_links {
     text-align: center; }
     #concept .concept_links h2 {
-      font-size: 30px; }
+      font-size: 28px; }
     #concept .concept_links ul {
-      margin-top: 50px; }
+      margin-top: 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
     #concept .concept_links li {
-      display: inline-block;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      padding: 0 10px; }
+      width: 332px;
+      margin-right: 35px;
+      display: block; }
+      #concept .concept_links li:last-child {
+        margin-right: 0; }
       #concept .concept_links li a {
         position: relative;
         display: block; }
         #concept .concept_links li a img {
           display: block;
           width: 100%; }
-        #concept .concept_links li a h2 {
+        #concept .concept_links li a span.txt {
+          display: inline-block;
+          font-size: 22px;
+          pointer-events: none;
           position: absolute;
           height: 30px;
           line-height: 30px;
-          width: 100%;
-          top: 50%;
-          margin-top: -15px;
-          font-size: 30px;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
           text-align: center;
           font-weight: normal;
-          color: #fff; }
+          color: #fff;
+          padding-right: 10px; }
+        #concept .concept_links li a span.caret {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          background: #aaa;
+          top: 0;
+          bottom: 0;
+          right: 15px;
+          margin: auto;
+          -webkit-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s; }
+          #concept .concept_links li a span.caret::before {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 3px;
+            left: 0;
+            margin: auto;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s; }
 
 @media screen and (max-width: 1150px) {
   #concept .main {
     width: 100%;
     height: 48vw; }
   #concept .concept_inner {
-    padding: 0 30px; } }
+    padding: 0 30px; }
+  #concept .concept_links {
+    text-align: center; }
+    #concept .concept_links h2 {
+      font-size: 28px; }
+    #concept .concept_links ul {
+      margin-top: 50px; }
+    #concept .concept_links li {
+      width: 49%;
+      margin-right: 2%; }
+      #concept .concept_links li:last-child {
+        margin-bottom: 0; }
+      #concept .concept_links li a span.txt {
+        font-size: 16px; } }
 
 @media screen and (max-width: 750px) {
   #concept {
     max-width: 100%;
     width: 100%;
     padding-top: 0;
-    margin: 0 auto 50px; }
+    margin: 0 auto; }
     #concept .main {
       height: 54vw; }
     #concept .concept_inner {
       padding: 0; }
     #concept .concept_index {
       display: none; }
+      #concept .concept_index ul li {
+        position: relative;
+        height: 24px;
+        line-height: 24px;
+        padding: 10px 0;
+        border-left: 1px solid #aaa; }
+        #concept .concept_index ul li a {
+          font-size: 14px;
+          color: #fff;
+          display: block;
+          padding-left: 25px; }
+        #concept .concept_index ul li.current {
+          border-left: 1px solid #fff; }
+          #concept .concept_index ul li.current a {
+            color: #888; }
     #concept .concept_index_sp {
       width: 100%;
       position: fixed;
       top: auto;
-      bottom: 100px;
+      bottom: 110px;
       left: 0;
       z-index: 30; }
       #concept .concept_index_sp .concept_index_sp_inner {
+        position: relative;
         margin: 0 20px;
-        background-color: #fff;
-        -webkit-box-shadow: 0px 2px 15px 5px rgba(0, 0, 0, 0.07);
-        box-shadow: 0px 2px 15px 5px rgba(0, 0, 0, 0.07);
-        border-radius: 4px;
-        border: 1px solid #f0f0f0;
-        padding: 15px 0; }
+        background-color: #00381f;
+        -webkit-box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.07);
+        box-shadow: 0 2px 15px 5px rgba(0, 0, 0, 0.07);
+        border-radius: 4px; }
+        #concept .concept_index_sp .concept_index_sp_inner::after {
+          display: block;
+          content: "";
+          width: 0px;
+          height: 0;
+          position: absolute;
+          right: 10px;
+          bottom: -39px;
+          border: 20px solid transparent;
+          border-top: 20px solid #00381f;
+          -webkit-transform: scale(0.7, 1);
+          -ms-transform: scale(0.7, 1);
+          transform: scale(0.7, 1); }
         #concept .concept_index_sp .concept_index_sp_inner li {
           height: 30px;
           line-height: 30px; }
           #concept .concept_index_sp .concept_index_sp_inner li a {
-            color: #00381F;
+            position: relative;
+            display: block;
+            color: #fff;
             font-size: 20px; }
+            #concept .concept_index_sp .concept_index_sp_inner li a::after {
+              display: block;
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              content: "";
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              border-top: 2px solid #aaa;
+              border-right: 2px solid #aaa;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+              -webkit-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s; }
     #concept .concept_kv h1 {
       font-size: 22px; }
     #concept .concept_content {
@@ -4611,7 +4704,26 @@ body.loaded #loading {
             margin-bottom: 15px;
             line-height: 30px; }
     #concept .concept_links h2 {
-      font-size: 22px; }
+      font-size: 6vw; }
+    #concept .concept_links ul {
+      margin-top: 40px; }
+    #concept .concept_links li {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 25px; }
+      #concept .concept_links li:last-child {
+        margin-bottom: 0; }
+      #concept .concept_links li a {
+        position: relative;
+        display: block; }
+        #concept .concept_links li a img {
+          display: block;
+          width: 100%; }
+        #concept .concept_links li a span.txt {
+          display: block;
+          font-size: 5.8vw;
+          height: 30px;
+          padding-right: 10px; }
     #concept .concept_index_btn {
       width: 70px;
       height: 70px;
@@ -4624,9 +4736,16 @@ body.loaded #loading {
       position: fixed;
       right: 15px;
       bottom: 15px;
-      font-size: 13px; }
-      #concept .concept_index_btn .-txt_closed {
-        display: none; } }
+      font-size: 13px;
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center center; }
+      #concept .concept_index_btn.close {
+        background-image: url("../img/concept/mokuji_open.png");
+        background-size: 30px; }
+      #concept .concept_index_btn.open {
+        background-image: url("../img/concept/mokuji_close.png");
+        background-size: 25px; } }
 
 /*下層ページのレイアウト*/
 #faq {

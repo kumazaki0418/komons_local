@@ -559,6 +559,45 @@ $(function() {
           topHeader($('#hLogo'));
         }
 
+        //コンセプト部分のボタン制御
+
+        function conceptPop(target){
+          var popState = 0;
+
+          function popShift(){
+            if(popState == 0){
+              target.removeClass('close');
+              target.addClass('open');
+              popState = 1;
+            }else{
+              target.removeClass('open');
+              target.addClass('close');
+              popState = 0;
+            }
+          }
+
+
+          function init(){
+            target.on({
+              'click': function(){
+                popShift();
+              }
+            })
+            $('#indexContent li a').on({
+              'click': function(){
+                popShift();
+              }
+            })
+          }
+
+          init()
+
+        }
+
+        if (document.getElementById('concept')) {
+          conceptPop($('#popButton'));
+        }
+
         //コンタクトフォームの制御
         function formControl(target){
           $("input").each(function() {
