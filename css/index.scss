@@ -487,6 +487,52 @@
 			padding-top: 130px;
 
 			.img_wrap {
+				position: relative;
+				transition: opacity 1s;
+				&::after{
+
+				}
+				&:hover{
+					opacity: 0.8;
+				}
+				.cover_link{
+					display: block;
+					position: absolute;
+					z-index: 10;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					margin: auto;
+					span.caret {
+	          position: absolute;
+	          width: 30px;
+	          height: 30px;
+	          border-radius: 100%;
+	          background: #aaa;
+	          top: 0;
+	          bottom: 0;
+	          right: 25px;
+	          margin: auto;
+	          transition: all 0.5s;
+
+	          &::before {
+	            position: absolute;
+	            width: 6px;
+	            height: 6px;
+	            content: "";
+	            top: 0;
+	            bottom: 0;
+	            right: 3px;
+	            left: 0;
+	            margin: auto;
+	            border-top: 2px solid #fff;
+	            border-right: 2px solid #fff;
+	            transform: rotate(45deg);
+	            transition: all 0.5s;
+	          }
+	        }
+				}
 				.txt_block {
 					position: absolute;
 					left: 60px;
@@ -1303,14 +1349,12 @@
 					background-position: center center;
 					background-size: cover;
 
-					a {
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						left: 0;
-						right: 0;
-						margin: auto;
-						z-index: 20;
+					.cover_link{
+						span.caret {
+		          width: 26px;
+		          height: 26px;
+		          right: 10px;
+		        }
 					}
 
 					.txt_block {
